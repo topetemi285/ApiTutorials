@@ -38,7 +38,7 @@ async function getProductById(params,cb){
     product.findById(productId)
     .then((response)=>{
         if(!response) cb('product id not found')
-        esle
+        else
         return cb(null,response);
 
     }).catch((error)=>{
@@ -47,14 +47,12 @@ async function getProductById(params,cb){
 }
 
 async function updateProduct(params,cb){
-
-    if(!response) cb()
     const productId = params.productId;
     
     product.findByIdAndUpdate(productId, params, {useFindAndModify:false})
     .then((response)=>{
         if(!response) cb('product id not found')
-        esle
+        else
         return cb(null,response);
     }).catch((error)=>{
         return cb(error); 
@@ -62,14 +60,12 @@ async function updateProduct(params,cb){
 }
 
 async function deleteProduct(params,cb){
-
-    if(!response) cb()
     const productId = params.productId;
     
     product.findByIdAndRemove(productId)
     .then((response)=>{
         if(!response) cb('product id not found')
-        esle
+        else
         return cb(null,response);
     }).catch((error)=>{
         return cb(error); 
